@@ -60,7 +60,7 @@ def generar_test():
 
     # Objetos
     dia = {
-        'values': ['DummyD', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+        'values': ['DummyD', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'],
         'type': 'day'
     }
     datos['objects'].append(dia)

@@ -1,17 +1,16 @@
 (define (problem ricoRico) (:domain ricoRico)
   (:objects
-    DummyD Mon Tue Wed Thu Fri - day
+    DummyD Lunes Martes Miercoles Jueves Viernes - day
     Spaghetti_Bolognese Mediterranean_Salad Vegan_Sandwich Mushroom_risotto Guacamole_with_tomatoes Sushi American_burger Broccoli_quiche Kirmizi_Mercimek_Corbasi Chinese_Noodles_With_Vegetables Chana_masala Chinese_tiger_salad Shumai - mainCourse
     Roast_pork_with_prunes Spanish_omelette Paella Tuna_steak Chicken_parmesan Lamb_tagine Couscous_meatloaf Coq_au_vin Mapo_tofu Persian_pie Burrito_pie Spicy_seafood_stew - secondCourse
     Fish Meat Soup Salad Rice Pasta Vegetables DummyC - category
   )
   (:init
-    (incompatible Kirmizi_Mercimek_Corbasi Spanish_omelette)
-    (incompatible Chinese_Noodles_With_Vegetables Chicken_parmesan)
+    (incompatible Kirmizi_Mercimek_Corbasi Tuna_steak)
     (incompatible Chinese_tiger_salad Paella)
-    (incompatible Mediterranean_Salad Spanish_omelette)
-    (incompatible Kirmizi_Mercimek_Corbasi Roast_pork_with_prunes)
-    (incompatible American_burger Burrito_pie)
+    (incompatible Mushroom_risotto Lamb_tagine)
+    (incompatible Guacamole_with_tomatoes Spanish_omelette)
+    (incompatible Broccoli_quiche Spicy_seafood_stew)
 
     (classified Spaghetti_Bolognese Pasta)
     (classified Mediterranean_Salad Salad)
@@ -39,19 +38,18 @@
     (classified Burrito_pie Pasta)
     (classified Spicy_seafood_stew Fish)
 
-    (dayBefore DummyD Mon)
-    (dayBefore Mon Tue)
-    (dayBefore Tue Wed)
-    (dayBefore Wed Thu)
-    (dayBefore Thu Fri)
+    (dayBefore DummyD Lunes)
+    (dayBefore Lunes Martes)
+    (dayBefore Martes Miercoles)
+    (dayBefore Miercoles Jueves)
+    (dayBefore Jueves Viernes)
 
     (mainReady DummyD)
     (secondReady DummyD)
     (dayMCClassif DummyD DummyC)
     (daySCClassif DummyD DummyC)
 
-    (servedOnly Couscous_meatloaf Wed)
-    (servedOnly Coq_au_vin DummyD)
+    (servedOnly Guacamole_with_tomatoes Martes)
 
     (= (minCalories) 1000)
     (= (maxCalories) 1500)

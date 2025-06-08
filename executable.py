@@ -4,7 +4,7 @@ import platform
 import sys
 
 def print_error():
-    print('¡Solo disponible en Linux!')
+    print('¡Tu sistema operativo no está soportado!')
     sys.exit(1)
 
 if __name__ == '__main__':

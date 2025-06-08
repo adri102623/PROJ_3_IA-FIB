@@ -1,21 +1,16 @@
 (define (problem ricoRico) (:domain ricoRico)
   (:objects
-    DummyD Mon Tue Wed Thu Fri - day
+    DummyD Lunes Martes Miercoles Jueves Viernes - day
     Spaghetti_Bolognese Mediterranean_Salad Vegan_Sandwich Mushroom_risotto Guacamole_with_tomatoes Sushi American_burger Broccoli_quiche Kirmizi_Mercimek_Corbasi Chinese_Noodles_With_Vegetables Chana_masala Chinese_tiger_salad Shumai - mainCourse
     Roast_pork_with_prunes Spanish_omelette Paella Tuna_steak Chicken_parmesan Lamb_tagine Couscous_meatloaf Coq_au_vin Mapo_tofu Persian_pie Burrito_pie Spicy_seafood_stew - secondCourse
     Fish Meat Soup Salad Rice Pasta Vegetables DummyC - category
   )
   (:init
-    (incompatible Sushi Spanish_omelette)
-    (incompatible Mushroom_risotto Burrito_pie)
-    (incompatible Broccoli_quiche Tuna_steak)
-    (incompatible Spaghetti_Bolognese Mapo_tofu)
-    (incompatible Mediterranean_Salad Spicy_seafood_stew)
-    (incompatible Sushi Spicy_seafood_stew)
-    (incompatible Shumai Burrito_pie)
-    (incompatible Shumai Couscous_meatloaf)
-    (incompatible Kirmizi_Mercimek_Corbasi Burrito_pie)
-    (incompatible Broccoli_quiche Tuna_steak)
+    (incompatible Chana_masala Persian_pie)
+    (incompatible American_burger Burrito_pie)
+    (incompatible Chana_masala Tuna_steak)
+    (incompatible Mushroom_risotto Coq_au_vin)
+    (incompatible Kirmizi_Mercimek_Corbasi Mapo_tofu)
 
     (classified Spaghetti_Bolognese Pasta)
     (classified Mediterranean_Salad Salad)
@@ -43,22 +38,18 @@
     (classified Burrito_pie Pasta)
     (classified Spicy_seafood_stew Fish)
 
-    (dayBefore DummyD Mon)
-    (dayBefore Mon Tue)
-    (dayBefore Tue Wed)
-    (dayBefore Wed Thu)
-    (dayBefore Thu Fri)
+    (dayBefore DummyD Lunes)
+    (dayBefore Lunes Martes)
+    (dayBefore Martes Miercoles)
+    (dayBefore Miercoles Jueves)
+    (dayBefore Jueves Viernes)
 
     (mainReady DummyD)
     (secondReady DummyD)
     (dayMCClassif DummyD DummyC)
     (daySCClassif DummyD DummyC)
 
-    (servedOnly Tuna_steak Wed)
-    (servedOnly Spicy_seafood_stew Thu)
-    (servedOnly Kirmizi_Mercimek_Corbasi Wed)
-    (servedOnly Guacamole_with_tomatoes DummyD)
-    (servedOnly Coq_au_vin Mon)
+    (servedOnly Mediterranean_Salad Viernes)
 
     (= (minCalories) 1000)
     (= (maxCalories) 1500)

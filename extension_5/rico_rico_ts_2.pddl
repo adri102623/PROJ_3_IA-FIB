@@ -1,22 +1,18 @@
 (define (problem ricoRico) (:domain ricoRico)
   (:objects
-    Lunes Martes Miercoles Jueves Viernes DummyD - day
+    DummyD Lunes Martes Miercoles Jueves Viernes - day
     Spaghetti_Bolognese Mediterranean_Salad Vegan_Sandwich Mushroom_risotto Guacamole_with_tomatoes Sushi American_burger Broccoli_quiche Kirmizi_Mercimek_Corbasi Chinese_Noodles_With_Vegetables Chana_masala Chinese_tiger_salad Shumai - mainCourse
     Roast_pork_with_prunes Spanish_omelette Paella Tuna_steak Chicken_parmesan Lamb_tagine Couscous_meatloaf Coq_au_vin Mapo_tofu Persian_pie Burrito_pie Spicy_seafood_stew - secondCourse
     Fish Meat Soup Salad Rice Pasta Vegetables DummyC - category
   )
   (:init
-    (incompatible Spaghetti_Bolognese Paella)
-    (incompatible Mediterranean_Salad Chicken_parmesan)
-    (incompatible Kirmizi_Mercimek_Corbasi Chicken_parmesan)
-    (incompatible Vegan_Sandwich Roast_pork_with_prunes)
-    (incompatible Mushroom_risotto Couscous_meatloaf)
-    (incompatible Guacamole_with_tomatoes Lamb_tagine)
-    (incompatible Chinese_Noodles_With_Vegetables Spicy_seafood_stew)
-    (incompatible Chinese_tiger_salad Burrito_pie)
-    (incompatible Sushi Coq_au_vin)
+    (incompatible Mediterranean_Salad Burrito_pie)
+    (incompatible Broccoli_quiche Tuna_steak)
+    (incompatible Broccoli_quiche Paella)
+    (incompatible Sushi Spanish_omelette)
+    (incompatible Kirmizi_Mercimek_Corbasi Spicy_seafood_stew)
+    (incompatible Mushroom_risotto Chicken_parmesan)
 
-    ; Main courses
     (classified Spaghetti_Bolognese Pasta)
     (classified Mediterranean_Salad Salad)
     (classified Vegan_Sandwich Vegetables)
@@ -30,14 +26,13 @@
     (classified Chana_masala Soup)
     (classified Chinese_tiger_salad Fish)
     (classified Shumai Rice)
-    ; Second courses
     (classified Roast_pork_with_prunes Meat)
     (classified Spanish_omelette Meat)
     (classified Paella Rice)
     (classified Tuna_steak Fish)
     (classified Chicken_parmesan Meat)
     (classified Lamb_tagine Meat)
-    (classified Couscous_meatloaf Meat)
+    (classified Couscous_meatloaf Vegetables)
     (classified Coq_au_vin Meat)
     (classified Mapo_tofu Vegetables)
     (classified Persian_pie Pasta)
@@ -50,21 +45,17 @@
     (dayBefore Miercoles Jueves)
     (dayBefore Jueves Viernes)
 
-    ; Dummy initializations
     (mainReady DummyD)
     (secondReady DummyD)
     (dayMCClassif DummyD DummyC)
     (daySCClassif DummyD DummyC)
 
-    (servedOnly Paella Jueves)
-    (servedOnly Spanish_omelette Lunes)
-    (servedOnly Lamb_tagine Miercoles)
-    (servedOnly Sushi Viernes)
+    (servedOnly Lamb_tagine Viernes)
+    (servedOnly Mapo_tofu Lunes)
 
     (= (minCalories) 1000)
     (= (maxCalories) 1500)
 
-    ; Main courses
     (= (calories Spaghetti_Bolognese) 500)
     (= (calories Mediterranean_Salad) 120)
     (= (calories Vegan_Sandwich) 290)
@@ -78,7 +69,6 @@
     (= (calories Chana_masala) 480)
     (= (calories Chinese_tiger_salad) 320)
     (= (calories Shumai) 410)
-    ; Second Courses
     (= (calories Roast_pork_with_prunes) 810)
     (= (calories Spanish_omelette) 380)
     (= (calories Paella) 700)
@@ -94,7 +84,6 @@
 
     (= (totalPrice) 0)
 
-    ; Main courses
     (= (price Spaghetti_Bolognese) 8)
     (= (price Mediterranean_Salad) 7)
     (= (price Vegan_Sandwich) 5)
@@ -108,7 +97,6 @@
     (= (price Chana_masala) 11)
     (= (price Chinese_tiger_salad) 6)
     (= (price Shumai) 13)
-    ; Second courses
     (= (price Roast_pork_with_prunes) 17)
     (= (price Spanish_omelette) 4)
     (= (price Paella) 25)

@@ -29,7 +29,7 @@
     (servedOnly ?dish - dish ?day - day)
   )
 
-  (:action assignMC
+  (:action Primer_Plato
 
     :parameters (?d - day ?mc - mainCourse)
     :precondition (and
@@ -43,7 +43,7 @@
     )
   )
 
-  (:action assignSC
+  (:action Segundo_Plato
     :parameters (?d - day ?mc - mainCourse ?sc - secondCourse)
     :precondition (and
       (assignedMC ?d ?mc) (not (secondReady ?d)) (not (used ?sc)) (not (incompatible ?mc ?sc))
